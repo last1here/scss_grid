@@ -1,0 +1,68 @@
+/* ---- Functions ---- */
+@function str-replace($string, $substr, $newsubstr, $all: 0) {
+	$position-found: str-index($string, $substr);
+	$processed: ();
+
+	@while ($position-found and $position-found > 0) {
+		$length-substr: str-length($substr);
+		$processed: append($processed, str-slice($string, 0, $position-found - 1));
+		$processed: append($processed, $newsubstr);
+		$string: str-slice($string, $position-found + $length-substr);
+
+		$position-found: 0;
+
+		@if ($all > 0) {
+			$position-found: str-index($string, $substr);
+		}
+	}
+
+	$processed: append($processed, $string);
+	$string: "";
+
+	@each $s in $processed {
+		$string: #{$string}#{$s};
+	}
+	@return $string;
+}
+@function to-string($value) {
+	@return inspect($value);
+}
+
+/* -- Core Variables -- */
+$_grid-colunms: 40;
+$percentage-jumps: 100 / $_grid-colunms;
+
+
+/* ---- Core Build ---- */
+.grid {
+	letter-spacing:-0.31em !important;
+	*letter-spacing:normal !important;
+	.col {
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: normal;
+		word-spacing: normal;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box
+	}
+	@for $c from 1 through $_grid-colunms {
+		$c-width: $c * $percentage-jumps;
+		$c-clean: str-replace(to-string($c-width), '.', '-', 1);
+		$c-percent: $c-width * 1%;
+
+		.col-#{$c-clean} {
+			display: inline-block;
+			width: $c-percent;
+		}
+		.col-pr-#{$c-clean} {
+			margin-left: $c-percent;
+		}
+		.col-pl-#{$c-clean} {
+			margin-left: $c-percent;
+		}
+	}
+}
+
+/* ---- Core Grid ---- */
+
