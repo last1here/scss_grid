@@ -24,19 +24,37 @@
 	}
 	@return $string;
 }
+
 @function to-string($value) {
 	@return inspect($value);
 }
 
 /* -- Core Variables -- */
 $_grid-colunms: 40;
+$_grid-gutter: 5px;
+$_grid-useflex: true;
+
+
 $percentage-jumps: 100 / $_grid-colunms;
 
 
 /* ---- Core Build ---- */
 .grid {
-	letter-spacing:-0.31em !important;
+	letter-spacing:-0.25em !important;
 	*letter-spacing:normal !important;
+	position: relative;
+	.row {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		  
+		-webkit-flex-flow: row wrap;
+		justify-content: space-around;
+
+		align-items: stretch;
+	}
 	.col {
 		display: inline-block;
 		vertical-align: top;
@@ -44,7 +62,7 @@ $percentage-jumps: 100 / $_grid-colunms;
 		word-spacing: normal;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
-		box-sizing: border-box
+		box-sizing: border-box;
 	}
 	.col-33 {
 		width: 33%;
@@ -83,8 +101,45 @@ $percentage-jumps: 100 / $_grid-colunms;
 }
 
 @media screen and (max-width: 43.75em) {
+	.grid{
+		.col-m-block {
+			display: block;
+			width: 100%;
+			margin: 0 0;
+		}
+		.col-m-33 {
+			width: 33%;
+		}
+		.col-m-pr-33 {
+			margin-left: 33%;
+		}
+		.col-m-pl-33 {
+			margin-right: 33%;
+		}
+		.col-m-66 {
+			width: 66%;
+		}
+		.col-m-pr-66 {
+			margin-left: 66%;
+		}
+		.col-m-pl-66 {
+			margin-right: 66%;
+		}
+		@for $c from 1 through $_grid-colunms {
+			$c-width: $c * $percentage-jumps;
+			$c-clean: str-replace(to-string($c-width), '.', '-', 1);
+			$c-percent: $c-width * 1%;
 
+			.col-m-#{$c-clean} {
+				display: inline-block;
+				width: $c-percent;
+			}
+			.col-m-pr-#{$c-clean} {
+				margin-left: $c-percent;
+			}
+			.col-m-pl-#{$c-clean} {
+				margin-left: $c-percent;
+			}
+		}
+	}
 }
-
-/* ---- Core Grid ---- */
-
