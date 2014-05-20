@@ -8,7 +8,6 @@
 		$processed: append($processed, str-slice($string, 0, $position-found - 1));
 		$processed: append($processed, $newsubstr);
 		$string: str-slice($string, $position-found + $length-substr);
-
 		$position-found: 0;
 
 		@if ($all > 0) {
@@ -25,23 +24,22 @@
 	@return $string;
 }
 
-@function to-string($value) {
-	@return inspect($value);
-}
-
 /* -- Core Variables -- */
-$_grid-colunms: 40;
+$_grid-colunms: 20;
 $_grid-gutter: 5px;
-$_grid-useflex: true;
-
 
 $percentage-jumps: 100 / $_grid-colunms;
 
 
 /* ---- Core Build ---- */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 .grid {
-	letter-spacing:-0.25em !important;
-	*letter-spacing:normal !important;
+	letter-spacing: -0.25em !important;
+	*letter-spacing: normal !important;
 	position: relative;
 	.row {
 		display: -webkit-box;
@@ -49,10 +47,8 @@ $percentage-jumps: 100 / $_grid-colunms;
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
-		  
 		-webkit-flex-flow: row wrap;
 		justify-content: space-around;
-
 		align-items: stretch;
 	}
 	.col {
@@ -60,9 +56,6 @@ $percentage-jumps: 100 / $_grid-colunms;
 		vertical-align: top;
 		letter-spacing: normal;
 		word-spacing: normal;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
 	}
 	.col-33 {
 		width: 33%;
@@ -84,7 +77,7 @@ $percentage-jumps: 100 / $_grid-colunms;
 	}
 	@for $c from 1 through $_grid-colunms {
 		$c-width: $c * $percentage-jumps;
-		$c-clean: str-replace(to-string($c-width), '.', '-', 1);
+		$c-clean: str-replace(inspect($c-width), '.', '-', 1);
 		$c-percent: $c-width * 1%;
 
 		.col-#{$c-clean} {
@@ -127,18 +120,23 @@ $percentage-jumps: 100 / $_grid-colunms;
 		}
 		@for $c from 1 through $_grid-colunms {
 			$c-width: $c * $percentage-jumps;
-			$c-clean: str-replace(to-string($c-width), '.', '-', 1);
+			$c-clean: str-replace(inspect($c-width), '.', '-', 1);
 			$c-percent: $c-width * 1%;
-
-			.col-m-#{$c-clean} {
-				display: inline-block;
-				width: $c-percent;
-			}
 			.col-m-pr-#{$c-clean} {
 				margin-left: $c-percent;
 			}
 			.col-m-pl-#{$c-clean} {
 				margin-left: $c-percent;
+			}
+		}
+
+		@for $c from 10 through $_grid-colunms {
+			$c-width: $c * $percentage-jumps;
+			$c-clean: str-replace(inspect($c-width), '.', '-', 1);
+			$c-percent: $c-width * 1%;
+			.col-m-#{$c-clean} {
+				display: inline-block;
+				width: $c-percent;
 			}
 		}
 	}
