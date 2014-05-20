@@ -1,10 +1,10 @@
 scss_grid
 =========
 
-A simple scss percentage based grid.
+A simple scss percentage based grid I use in most projects so thought i'd seperate it into its own repository to allow for easier management.
 
 ##Settings##
 
-Theres only one configurable option
+There is only one configurable option
 
-- `$_grid-colunms` decides how many columns you want to have. 
+- `$_grid-colunms` The amount columns.
