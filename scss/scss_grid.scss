@@ -36,18 +36,21 @@
 	}
 }
 
-	[class*="#{$col_prefix}"] {
-		width: 100% - $spacer;
-		margin-left: $spacer;
-		box-sizing: border-box;
-	}
+[class*="#{$col_prefix}"] {
+	width: 100% - $spacer;
+	margin-left: $spacer;
+	box-sizing: border-box;
+}
 
-	@include loop ($small_col);
+/* ---- Mobile ---- */
+@include loop ($small_col);
 
-	@include media(tablet) {
-		@include loop ($medium_col);
-	}
+/* ---- Tablet ---- */
+@include media(tablet) {
+	@include loop ($medium_col);
+}
 
-	@include media(desktop) {
-		@include loop ($large_col);
-	}
+/* ---- Desktop ---- */
+@include media(desktop) {
+	@include loop ($large_col);
+}
