@@ -6,19 +6,7 @@
 // --------------
 // Core Build
 // --------------
-.grid {
-	letter-spacing: -0.25em;
-	*letter-spacing: normal;
-	position: relative;
-	[class*="#{$col_prefix}"] {
-		display: inline-block;
-		vertical-align: top;
-		letter-spacing: normal;
-		word-spacing: normal;
-	}
-}
-
-.grid-float {
+.grid, .grid-left, .grid-right {
 	&:after, &:before {
 		content: "";
 		display: table;
@@ -26,25 +14,30 @@
 	&:after {
 		clear: both;
 	}
+}
+.grid, .grid-left {
 	[class*="#{$col_prefix}"] {
 		float: left;
 	}
-	[class*="#{$col_prefix}"].right {
+}
+.grid-right {
+	[class*="#{$col_prefix}"] {
 		float: right;
+	}
+}
+.grid-center {
+	[class*="#{$col_prefix}"] {
+		float: none;
+		margin: 0 auto;
 	}
 }
 
 [class*="#{$col_prefix}"] {
-	width: 100%;
+	width: 100% - $_spacer;
 	overflow: hidden;
 	box-sizing: border-box;
-	&.center {
-		display: block;
-		margin: 0 auto;
-	}
-	&.block {
-		display: block;
-	}
+	margin-right: $spacer;
+	margin-left: $spacer;
 }
 
 /* ---- Mobile ---- */

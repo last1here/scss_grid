@@ -3,15 +3,42 @@
 		$key: nth($size, 1);
 		$value: nth($size, 2);
 
-		#{$prefix}-#{$key} {
-			width: $value;
+		#{$prefix + $col_prefix}-#{$key} {
+			width: $value - $_spacer;
 		}
 	}
 
 	@for $cols from 1 through $colunms {
 		$width: $cols * $_p* 1%;
-		#{$prefix}-#{$cols} {
-			width: $width;
+		#{$prefix + $col_prefix}-#{$cols} {
+			width: $width - $_spacer;
+		}
+		@if $width != 100% {
+			#{$prefix}push-right-#{$cols} {
+				margin-left: $width;
+			}
+			#{$prefix}push-left-#{$cols} {
+				margin-right: $width;
+			}
 		}
 	}
+	
+	[class*="#{$col_prefix}"] {
+		&#{$prefix}block {
+			float: none;
+		}
+		&#{$prefix}center {
+			float: none;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&#{$prefix}right {
+			float: right;
+		}
+		&#{$prefix}left {
+			float: left;
+		}
+	}
+
+
 }

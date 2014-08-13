@@ -4,17 +4,17 @@
 
 $colunms: 10;
 $prefix: "";
-$spacer: 1%;
+$spacer: 0.5%;
 
 $col_prefix: "col";
-$small_prefix: "s-";
+$small_prefix: "";
 $medium_prefix: "m-";
 $large_prefix: "l-";
 
 $col: "." + $prefix + $col_prefix;
-$small_col: "." + $prefix + $small_prefix + $col_prefix;
-$medium_col: "." + $prefix + $medium_prefix + $col_prefix;
-$large_col: "." + $prefix + $large_prefix + $col_prefix;
+$small_col: "." + $prefix + $small_prefix;
+$medium_col: "." + $prefix + $medium_prefix;
+$large_col: "." + $prefix + $large_prefix;
 
 $_spacer: $spacer *2;
 $_p: 100/$colunms;

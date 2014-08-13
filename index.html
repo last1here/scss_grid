@@ -10,15 +10,21 @@
 				max-width: 1000px;
 				margin: 0 auto;
 			}
-			.grid {
-				margin-bottom: 50px;
+			section {
+				margin-bottom: 30px;
 			}
-			[class*='col'] {
+			small {
+				font-weight: normal;
+				font-size: 10px;
+			}
+			.example [class*='col'] {
 				background: #CCC;
-				height: 40px;
+				height: 20px;
 				margin-bottom: 10px;
 				text-align: center;
-				line-height: 40px;
+				line-height: 20px;
+				font-size: 10px;
+				font-weight: bold;
 			}
 		</style>
 	</head>
@@ -31,90 +37,225 @@
 				</div>
 			</section>
 			<section>
-				<div class="grid">
-					<div class="s-col-1 block">.s-col-1</div>
+				<h3>Basic columns <small>(No Breakpoint)</small></h3>
+				<div class="grid example">
+					<div class="col-1 block">.col-1</div>
 
-					<div class="s-col-2 block">.s-col-2</div>
+					<div class="col-2 block">.col-2</div>
 
-					<div class="s-col-quarter block">.s-col-quarter</div>
+					<div class="col-quarter block">.col-quarter</div>
 
-					<div class="s-col-3 block">.s-col-3</div>
+					<div class="col-3 block">.col-3</div>
 
-					<div class="s-col-third block">.s-col-third</div>
+					<div class="col-third block">.col-third</div>
 
-					<div class="s-col-4 block">.s-col-4</div>
+					<div class="col-4 block">.col-4</div>
 
-					<div class="s-col-half block">.s-col-half</div>
+					<div class="col-half block">.col-half</div>
 
-					<div class="s-col-6">.s-col-6</div>
+					<div class="col-6">.col-6</div>
 
-					<div class="s-col-7">.s-col-7</div>
+					<div class="col-7">.col-7</div>
 
-					<div class="s-col-three-quarters">.s-col-three-quarters</div>
+					<div class="col-three-quarters">.col-three-quarters</div>
 
-					<div class="s-col-8">.s-col-8</div>
+					<div class="col-8">.col-8</div>
 
-					<div class="s-col-9">.s-col-9</div>
+					<div class="col-9">.col-9</div>
 
-					<div class="s-col-full">.s-col-full</div>
+					<div class="col-full">.col-full</div>
 				</div>
 			</section>
 
-			<div class="grid">
-				<div class="m-col-1 block">.m-col-1</div>
+			<section>
+			
+				<h3>Meduim columns <small>(min-width: 600px)</small></h3>
 
-				<div class="m-col-2 block">.m-col-2</div>
+				<div class="grid example">
+					<div class="m-col-1 block">.m-col-1</div>
 
-				<div class="m-col-quarter block">.m-col-quarter</div>
+					<div class="m-col-2 block">.m-col-2</div>
 
-				<div class="m-col-3 block">.m-col-3</div>
+					<div class="m-col-quarter block">.m-col-quarter</div>
 
-				<div class="m-col-third block">.m-col-third</div>
+					<div class="m-col-3 block">.m-col-3</div>
 
-				<div class="m-col-4 block">.m-col-4</div>
+					<div class="m-col-third block">.m-col-third</div>
 
-				<div class="m-col-half block">.m-col-half</div>
+					<div class="m-col-4 block">.m-col-4</div>
 
-				<div class="m-col-6">.m-col-6</div>
+					<div class="m-col-half block">.m-col-half</div>
 
-				<div class="m-col-7">.m-col-7</div>
+					<div class="m-col-6">.m-col-6</div>
 
-				<div class="m-col-three-quarters">.m-col-three-quarters</div>
+					<div class="m-col-7">.m-col-7</div>
 
-				<div class="m-col-8">.m-col-8</div>
+					<div class="m-col-three-quarters">.m-col-three-quarters</div>
 
-				<div class="m-col-9">.m-col-9</div>
+					<div class="m-col-8">.m-col-8</div>
 
-				<div class="m-col-full">.m-col-full</div>
-			</div>
+					<div class="m-col-9">.m-col-9</div>
 
-			<div class="grid">
-				<div class="l-col-1 block">.l-col-1</div>
+					<div class="m-col-full">.m-col-full</div>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Large columns <small>(min-width: 1025px)</small></h3>
 
-				<div class="l-col-2 block">.l-col-2</div>
+				<div class="grid example">
+					<div class="l-col-1 block">.l-col-1</div>
 
-				<div class="l-col-quarter block">.l-col-quarter</div>
+					<div class="l-col-2 block">.l-col-2</div>
 
-				<div class="l-col-3 block">.l-col-3</div>
+					<div class="l-col-quarter block">.l-col-quarter</div>
 
-				<div class="l-col-third block">.l-col-third</div>
+					<div class="l-col-3 block">.l-col-3</div>
 
-				<div class="l-col-4 block">.l-col-4</div>
+					<div class="l-col-third block">.l-col-third</div>
 
-				<div class="l-col-half block">.l-col-half</div>
+					<div class="l-col-4 block">.l-col-4</div>
 
-				<div class="l-col-6">.l-col-6</div>
+					<div class="l-col-half block">.l-col-half</div>
 
-				<div class="l-col-7">.l-col-7</div>
+					<div class="l-col-6">.l-col-6</div>
 
-				<div class="l-col-three-quarters">.l-col-three-quarters</div>
+					<div class="l-col-7">.l-col-7</div>
 
-				<div class="l-col-8">.l-col-8</div>
+					<div class="l-col-three-quarters">.l-col-three-quarters</div>
 
-				<div class="l-col-9">.l-col-9</div>
+					<div class="l-col-8">.l-col-8</div>
 
-				<div class="l-col-full">.l-col-full</div>
-			</div>
+					<div class="l-col-9">.l-col-9</div>
+
+					<div class="l-col-full">.l-col-full</div>
+				</div>
+			</section>
+
+			<h2>Align</h2>
+			<section class="grid">
+				<div class="m-col-third">
+					<h3>Left align <small>.grid or .grid-left</small></h3>
+					<div class="grid example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7"></div>
+						<div class="col-three-quarters"></div>
+						<div class="col-8"></div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Center align <small>.grid-center</small></h3>
+					<div class="grid-center example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7"></div>
+						<div class="col-three-quarters"></div>
+						<div class="col-8"></div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Right align <small>.grid-right</small></h3>
+					<div class="grid-right example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7"></div>
+						<div class="col-three-quarters"></div>
+						<div class="col-8"></div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Single column left align</h3>
+					<div class="grid-right example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7 left">.left</div>
+						<div class="col-three-quarters m-left">.m-left</div>
+						<div class="col-8 l-left">.l-left</div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Single column center align</h3>
+					<div class="grid example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7 center">.center</div>
+						<div class="col-three-quarters m-center">.m-center</div>
+						<div class="col-8 l-center">.l-center</div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Single column right align</h3>
+					<div class="grid example">
+						<div class="col-half"></div>
+						<div class="col-6"></div>
+						<div class="col-7 right">.right</div>
+						<div class="col-three-quarters m-right">.m-right</div>
+						<div class="col-8 l-right">.l-right</div>
+						<div class="col-9"></div>
+						<div class="col-full"></div>
+					</div>
+				</div>
+			</section>
+
+			<h2>Offsets</h2>
+			<section class="grid">
+				<div class="m-col-third">
+					<h3>Basic offsets  <small>.push-right-*, .push-left-* (No Breakpoint)</small></h3>
+					<div class="grid example">
+						<div class="col-half push-right-1">.push-right-1</div>
+						<div class="col-half push-right-2">.push-right-2</div>
+						<div class="col-half push-right-3">.push-right-3</div>
+						<div class="col-half push-right-4">.push-right-4</div>
+						<div class="col-half push-right-5">.push-right-5</div>
+						<div class="col-half right push-left-1">.push-left-1</div>
+						<div class="col-half right push-left-2">.push-left-2</div>
+						<div class="col-half right push-left-3">.push-left-3</div>
+						<div class="col-half right push-left-4">.push-left-4</div>
+						<div class="col-half right push-left-5">.push-left-5</div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Meduim offset <small>.m-push-right-*, .m-push-left-* (min-width: 600px)</small></h3>
+					<div class="grid example">
+						<div class="col-half m-push-right-1">.m-push-right-1</div>
+						<div class="col-half m-push-right-2">.m-push-right-2</div>
+						<div class="col-half m-push-right-3">.m-push-right-3</div>
+						<div class="col-half m-push-right-4">.m-push-right-4</div>
+						<div class="col-half m-push-right-5">.m-push-right-5</div>
+						<div class="col-half right m-push-left-1">.m-push-left-1</div>
+						<div class="col-half right m-push-left-2">.m-push-left-2</div>
+						<div class="col-half right m-push-left-3">.m-push-left-3</div>
+						<div class="col-half right m-push-left-4">.m-push-left-4</div>
+						<div class="col-half right m-push-left-5">.m-push-left-5</div>
+					</div>
+				</div>
+				<div class="m-col-third">
+					<h3>Large columns <small>.l-push-right-*, .l-push-left-* (min-width: 1025px)</small></h3>
+					<div class="grid example">
+						<div class="col-half l-push-right-1">.l-push-right-1</div>
+						<div class="col-half l-push-right-2">.l-push-right-2</div>
+						<div class="col-half l-push-right-3">.l-push-right-3</div>
+						<div class="col-half l-push-right-4">.l-push-right-4</div>
+						<div class="col-half l-push-right-5">.l-push-right-5</div>
+						<div class="col-half right l-push-left-1">.l-push-left-1</div>
+						<div class="col-half right l-push-left-2">.l-push-left-2</div>
+						<div class="col-half right l-push-left-3">.l-push-left-3</div>
+						<div class="col-half right l-push-left-4">.l-push-left-4</div>
+						<div class="col-half right l-push-left-5">.l-push-left-5</div>
+					</div>
+				</div>
+			</section>
 		</main>
 	</body>
 </html>
