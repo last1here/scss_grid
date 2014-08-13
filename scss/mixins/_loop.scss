@@ -4,12 +4,12 @@
 		$value: nth($size, 2);
 
 		#{$prefix}-#{$key} {
-			width: $value - $spacer;
+			width: $value;
 		}
 	}
 
 	@for $cols from 1 through $colunms {
-		$width: $cols * $_p - $spacer;
+		$width: $cols * $_p* 1%;
 		#{$prefix}-#{$cols} {
 			width: $width;
 		}

@@ -10,7 +10,6 @@
 	letter-spacing: -0.25em;
 	*letter-spacing: normal;
 	position: relative;
-	margin-left: -$spacer;
 	[class*="#{$col_prefix}"] {
 		display: inline-block;
 		vertical-align: top;
@@ -20,7 +19,6 @@
 }
 
 .grid-float {
-	margin-left: -$spacer;
 	&:after, &:before {
 		content: "";
 		display: table;
@@ -37,9 +35,16 @@
 }
 
 [class*="#{$col_prefix}"] {
-	width: 100% - $spacer;
-	margin-left: $spacer;
+	width: 100%;
+	overflow: hidden;
 	box-sizing: border-box;
+	&.center {
+		display: block;
+		margin: 0 auto;
+	}
+	&.block {
+		display: block;
+	}
 }
 
 /* ---- Mobile ---- */
