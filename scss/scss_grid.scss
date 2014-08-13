@@ -1,0 +1,55 @@
+@import "variables";
+
+
+@import "mixins/str_replace";
+@import "mixins/media";
+@import "mixins/loop";
+
+// --------------
+// Core Build
+// --------------
+.grid {
+	letter-spacing: -0.25em;
+	*letter-spacing: normal;
+	position: relative;
+	margin-left: -$spacer;
+	[class*="#{$col_prefix}"] {
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: normal;
+		word-spacing: normal;
+	}
+}
+
+.grid-float {
+	margin-left: -$spacer;
+	&:after, &:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	[class*="#{$col_prefix}"] {
+		float: left;
+	}
+	[class*="#{$col_prefix}"].right {
+		float: right;
+	}
+}
+
+	[class*="#{$col_prefix}"] {
+		width: 100% - $spacer;
+		margin-left: $spacer;
+		box-sizing: border-box;
+	}
+
+	@include loop ($small_col);
+
+	@include media(tablet) {
+		@include loop ($medium_col);
+	}
+
+	@include media(desktop) {
+		@include loop ($large_col);
+	}

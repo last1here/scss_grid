@@ -1,0 +1,17 @@
+@mixin loop ($prefix) {	
+	@each $size in $size_helpers {
+		$key: nth($size, 1);
+		$value: nth($size, 2);
+
+		#{$prefix}-#{$key} {
+			width: $value - $spacer;
+		}
+	}
+
+	@for $cols from 1 through $colunms {
+		$width: $cols * $_p - $spacer;
+		#{$prefix}-#{$cols} {
+			width: $width;
+		}
+	}
+}
