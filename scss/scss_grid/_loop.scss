@@ -1,13 +1,17 @@
-@mixin loop ($prefix) {	
-	@each $size in $size_helpers {
-		$key: nth($size, 1);
+// Loop mixin
+// -------------------------
+@mixin loop ($prefix) {
+	// loop $helpers
+	@each $size in $helpers {
+		$label: nth($size, 1);
 		$value: nth($size, 2);
 
-		#{$prefix + $col_prefix}-#{$key} {
+		#{$prefix + $col_prefix}-#{$label} {
 			width: $value - $_spacer;
 		}
 	}
 
+	// loop $columns
 	@for $cols from 1 through $colunms {
 		$width: $cols * $_p* 1%;
 		#{$prefix + $col_prefix}-#{$cols} {
@@ -39,6 +43,4 @@
 			float: left;
 		}
 	}
-
-
 }

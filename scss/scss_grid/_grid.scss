@@ -1,11 +1,8 @@
 @import "variables";
+@import "loop";
 
-@import "mixins/media";
-@import "mixins/loop";
-
-// --------------
-// Core Build
-// --------------
+// Core grid styles
+// -------------------------
 .grid, .grid-left, .grid-right {
 	&:after, &:before {
 		content: "";
@@ -40,15 +37,20 @@
 	margin-left: $spacer;
 }
 
-/* ---- Mobile ---- */
-@include loop ($small_col);
+// Default columns styles
+// -------------------------
+@include loop ("." + $prefix);
 
-/* ---- Tablet ---- */
-@include media(tablet) {
-	@include loop ($medium_col);
-}
+// Loop through all breakpoints
+// -------------------------
+@each $breaks in $breakpoints {
+	$pos: index($breakpoints, $breaks);
+	$breakpoint: $breaks;
+	$breakprefix: "." + $prefix + nth($prefixes, $pos);
 
-/* ---- Desktop ---- */
-@include media(desktop) {
-	@include loop ($large_col);
+	@media screen and (min-width: #{$breakpoint}) { 
+		// Breakpoint columns styles
+		// -------------------------
+		@include loop ($breakprefix);
+	}
 }

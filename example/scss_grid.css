@@ -33,7 +33,6 @@
   margin-left: 0.5%;
 }
 
-/* ---- Mobile ---- */
 .col-quarter {
   width: 24%;
 }
@@ -185,7 +184,6 @@
   float: left;
 }
 
-/* ---- Tablet ---- */
 @media screen and (min-width: 600px) {
   .m-col-quarter {
     width: 24%;
@@ -338,7 +336,6 @@
     float: left;
   }
 }
-/* ---- Desktop ---- */
 @media screen and (min-width: 1025px) {
   .l-col-quarter {
     width: 24%;
