@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             ' */\n',
         },
         files: {
-          'css/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss'
+          'example/<%= pkg.name %>.css': 'scss/<%= pkg.name %>.scss'
         }
       }
     },
