@@ -2,14 +2,14 @@
 // Core Variables
 // --------------
 
-$colunms: 10;
-$prefix: "";
-$spacer: 0.5%;
+$colunms: 10 !default;
+$prefix: "" !default;
+$spacer: 0.5% !default;
 
-$col_prefix: "col";
-$small_prefix: "";
-$medium_prefix: "m-";
-$large_prefix: "l-";
+$col_prefix: "col" !default;
+$small_prefix: "" !default;
+$medium_prefix: "m-" !default;
+$large_prefix: "l-" !default;
 
 $col: "." + $prefix + $col_prefix;
 $small_col: "." + $prefix + $small_prefix;
@@ -26,4 +26,4 @@ $size_helpers: (
 	"two-thirds": 66.666666%,
 	"three-quarters": 75%,
 	"full": 100%
-	);
+	) !default;

@@ -1,0 +1,54 @@
+@import "variables";
+
+@import "mixins/media";
+@import "mixins/loop";
+
+// --------------
+// Core Build
+// --------------
+.grid, .grid-left, .grid-right {
+	&:after, &:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+.grid, .grid-left {
+	[class*="#{$col_prefix}"] {
+		float: left;
+	}
+}
+.grid-right {
+	[class*="#{$col_prefix}"] {
+		float: right;
+	}
+}
+.grid-center {
+	[class*="#{$col_prefix}"] {
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+[class*="#{$col_prefix}"] {
+	width: 100% - $_spacer;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin-right: $spacer;
+	margin-left: $spacer;
+}
+
+/* ---- Mobile ---- */
+@include loop ($small_col);
+
+/* ---- Tablet ---- */
+@include media(tablet) {
+	@include loop ($medium_col);
+}
+
+/* ---- Desktop ---- */
+@include media(desktop) {
+	@include loop ($large_col);
+}
