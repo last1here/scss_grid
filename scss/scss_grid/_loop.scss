@@ -7,7 +7,11 @@
 		$value: nth($size, 2);
 
 		#{$prefix + $col_prefix}-#{$label} {
-			width: $value - $_spacer;
+			@if $use_padding == true {
+				width: $value;
+			} @else {
+				width: $value - $_spacer;
+			}
 		}
 	}
 
@@ -15,7 +19,11 @@
 	@for $cols from 1 through $colunms {
 		$width: $cols * $_p* 1%;
 		#{$prefix + $col_prefix}-#{$cols} {
-			width: $width - $_spacer;
+			@if $use_padding == true {
+				width: $width;
+			} @else {
+				width: $width - $_spacer;
+			}
 		}
 		@if $width != 100% {
 			#{$prefix}push-right-#{$cols} {

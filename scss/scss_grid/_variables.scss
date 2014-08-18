@@ -7,6 +7,7 @@ $prefix: "" !default;
 $col_prefix: "col" !default;
 $prefixes: "m-", "l-" !default;
 $breakpoints: 600px, 1025px !default;
+$use_padding: false !default;
 
 $helpers: "quarter" 25%, "third" 33.333333%, "half" 50%, "two-thirds" 66.666666%, "three-quarters" 75%, "full" 100% !default;
 
