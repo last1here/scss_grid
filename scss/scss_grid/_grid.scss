@@ -43,7 +43,7 @@
 	}
 }
 @if $use_padding == true {
-	&.#{$col_prefix}__no-padding{
+	.#{$col_prefix}__no-padding{
 		padding-right: 0;
 		padding-left: 0;
 	}
