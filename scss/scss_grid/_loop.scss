@@ -1,6 +1,13 @@
 // Loop mixin
 // -------------------------
 @mixin loop ($prefix) {
+	@if $use_padding == true {
+		#{$prefix + $col_prefix}__no-padding{
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
 	// loop $helpers
 	@each $size in $helpers {
 		$label: nth($size, 1);
