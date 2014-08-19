@@ -13,23 +13,23 @@
 	}
 }
 .grid, .grid-left {
-	[class*="#{$col_prefix}"] {
+	[class*="#{$col_prefix}-"] {
 		float: left;
 	}
 }
 .grid-right {
-	[class*="#{$col_prefix}"] {
+	[class*="#{$col_prefix}-"] {
 		float: right;
 	}
 }
 .grid-center {
-	[class*="#{$col_prefix}"] {
+	[class*="#{$col_prefix}-"] {
 		float: none;
 		margin: 0 auto;
 	}
 }
 
-[class*="#{$col_prefix}"] {
+[class*="#{$col_prefix}-"] {
 	overflow: hidden;
 	box-sizing: border-box;
 	@if $use_padding == true {
