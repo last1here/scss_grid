@@ -8,6 +8,16 @@
 		}
 	}
 
+	#{$prefix + $col_prefix}__no-spacing{
+		@if $use_padding == true {
+			padding-right: 0;
+			padding-left: 0;
+		} else {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
 	// loop $helpers
 	@each $size in $helpers {
 		$label: nth($size, 1);
