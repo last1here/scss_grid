@@ -3,7 +3,7 @@
 
 // Core grid styles
 // -------------------------
-.grid, .grid-left, .grid-right {
+.grid, .grid-left, .grid-right, .row {
 	&:after, &:before {
 		content: "";
 		display: table;
