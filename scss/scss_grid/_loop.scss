@@ -2,19 +2,29 @@
 // -------------------------
 @mixin loop ($prefix) {
 	@if $use_padding == true {
-		#{$prefix + $col_prefix}__no-padding{
+		#{$prefix + $col_prefix}__no-padding {
 			padding-right: 0;
 			padding-left: 0;
 		}
 	}
 
-	#{$prefix + $col_prefix}__no-spacing{
+	#{$prefix + $col_prefix}__no-spacing {
 		@if $use_padding == true {
 			padding-right: 0;
 			padding-left: 0;
 		} else {
 			margin-right: 0;
 			margin-left: 0;
+		}
+	}
+
+	#{$prefix + $col_prefix}__spacing {
+		@if $use_padding == true {
+			padding-right: $spacer;
+			padding-left: $spacer;
+		} else {
+			margin-right: $spacer;
+			margin-left: $spacer;
 		}
 	}
 
